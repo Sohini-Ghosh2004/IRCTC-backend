@@ -37,6 +37,35 @@ A backend system that simulates railway ticket booking with real-world features 
 ##  API Testing
 
 Postman collection available in `/postman` folder.
+### How to Import
+1. Open Postman
+2. Click "Import"
+3. Upload the JSON file
+4. Start testing endpoints
+
+---
+
+### Example APIs Covered:
+- User Registration & Login
+- Train Search
+- Ticket Booking (Confirmed / RAC / Waitlist)
+- Cancel Booking
+- Booking History
+
+ **Note:** Some endpoints require JWT authentication.  
+Login first and include the token in headers:
+
+Authorization: Bearer <your_token>
+
+##  Admin APIs
+Certain endpoints are restricted to admin users:
+
+- Add stations
+- Add trains
+- Create train schedules
+- Add train stops
+
+ These require an admin JWT token.
 
 ---
 
@@ -45,7 +74,7 @@ Postman collection available in `/postman` folder.
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/irctc-backend.git
+git clone https://github.com/Sohini-Ghosh2004/irctc-backend.git
 cd irctc-backend
 ```
 
@@ -70,6 +99,3 @@ python run.py
 
 ---
 
-## Highlight
-
-This project implements real-world railway booking logic including RAC and waitlist handling along with concurrency control, which is rarely covered in typical student projects.
