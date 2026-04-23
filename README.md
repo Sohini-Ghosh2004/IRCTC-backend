@@ -30,7 +30,7 @@ A backend system that simulates railway ticket booking with real-world features 
 
 ##  Database Design
 
-![ER Diagram](docs/er_diagram.png)
+![ER Diagram](docs/er_diagram_irctc.png)
 
 ---
 
