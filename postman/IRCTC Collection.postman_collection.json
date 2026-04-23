@@ -1,0 +1,481 @@
+{
+  "info": {
+    "_postman_id": "1e33c586-84cc-4758-a943-190efa08c6f4",
+    "name": "IRCTC Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39250087"
+  },
+  "item": [
+    {
+      "name": "Admin APIs",
+      "item": [
+        {
+          "name": "add station",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDAyNjY0NSwianRpIjoiOWJkY2JlNDktZGY1Ny00ZjgyLTkzNTktY2QyNThhMDNmNjc5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NzQwMjY2NDUsImNzcmYiOiJiYWRmMGMxNy0yZjQ0LTRjZWQtOTU0NS0wNzJlMjc2ZWUwMjQiLCJleHAiOjE3NzQwMjc1NDV9.UH03cwvl5esnLfTLGdn_Irzw6lNGy8BMP8BJmZtkeao",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"code\":\"HWH\",\r\n    \"name\":\"Howrah\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/api/stations",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "stations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add train",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDAyNjY0NSwianRpIjoiOWJkY2JlNDktZGY1Ny00ZjgyLTkzNTktY2QyNThhMDNmNjc5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NzQwMjY2NDUsImNzcmYiOiJiYWRmMGMxNy0yZjQ0LTRjZWQtOTU0NS0wNzJlMjc2ZWUwMjQiLCJleHAiOjE3NzQwMjc1NDV9.UH03cwvl5esnLfTLGdn_Irzw6lNGy8BMP8BJmZtkeao",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"code\":\"HWH\",\r\n    \"name\":\"Howrah\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/api/stations",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "stations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add train_schedule",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDI2Njc1MiwianRpIjoiNWZkYzM4NDgtNGUxMS00ZmNlLTk2NDMtNjZmYTg4NTY4MDM3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzQyNjY3NTIsImNzcmYiOiJiN2M2YTllZi0zMmI2LTQ3NjItYjE0Ny03ZWE4MTY0YTE4MzYiLCJleHAiOjE3NzQyNjc2NTJ9.Z80JY3EewiWHTmBmYoduKnCPTDXGentcN5Z9fsI7u28",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"train_id\": 1,\r\n  \"journey_date\": \"2026-03-25\",\r\n  \"departure_time\": \"2026-03-25 08:00:00\",\r\n  \"arrival_time\": \"2026-03-25 20:00:00\",\r\n  \"available_seats\": 100\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/api/train_schedules/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "train_schedules",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add train stop",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDUyOTQxMCwianRpIjoiZTcwMmNjZTEtNDJiOC00YzkyLTlkN2ItNWFmZTA4Njc2YTFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzQ1Mjk0MTAsImNzcmYiOiIyMWYzNGJmMC0zYTJhLTRjNTQtODdlOC03MTYxNWJiOTU5NDMiLCJleHAiOjE3NzQ1MzAzMTB9.1Le_bXHnrm51B3lQQfyKE8SpVlp7S0NLX83ALN6_Csg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"train_id\": 1,\r\n  \"station_id\": 2,\r\n  \"stop_order\": 2,\r\n  \"arrival_time\": \"10:00:00\",\r\n  \"departure_time\": \"10:10:00\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/api/train_stops",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "train_stops"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"admin\",\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"admin123\"\r\n\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \r\n    \"email\":\"ambani@gmail.com\",\r\n    \"password\":\"ambani123\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "me",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDAyNTg5NCwianRpIjoiYmUwMTRjZTUtYTAxNS00MWQ3LWExMzItZjA3NjNjNDFmMTI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NzQwMjU4OTQsImNzcmYiOiIzMWUzZTM1ZS00ZDFkLTQ5MzQtODdhZC00MWY4ODE2ZTQyMWMiLCJleHAiOjE3NzQwMjY3OTR9.MmE9EJXc3H4m_hRDr4_yrB5ReuKYhHoB--P3jqthEgE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/auth/me",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "dashboard",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDAyNjY0NSwianRpIjoiOWJkY2JlNDktZGY1Ny00ZjgyLTkzNTktY2QyNThhMDNmNjc5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NzQwMjY2NDUsImNzcmYiOiJiYWRmMGMxNy0yZjQ0LTRjZWQtOTU0NS0wNzJlMjc2ZWUwMjQiLCJleHAiOjE3NzQwMjc1NDV9.UH03cwvl5esnLfTLGdn_Irzw6lNGy8BMP8BJmZtkeao",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/admin/dashboard",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "dashboard"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/stations",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "trains",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/trains/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "trains",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "train_schedule",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "booking",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDM2MTY3NiwianRpIjoiMmEwYzhmMWMtYTY3ZC00OWY5LWJiNDYtYWQ1ODEyMzQzYWNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NzQzNjE2NzYsImNzcmYiOiI3ZTEwZGNkYi01YmMzLTQ4YzgtYmQxZC1jMzcwOTMxN2I2MmQiLCJleHAiOjE3NzQzNjI1NzZ9.ZEu--QcK0qEWhgwFoJ_fy2l0d2pixKzFHiuM1zSoQsg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \r\n    \"train_schedule_id\":1\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/bookings",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get my bookings",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "del booking",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NDQzMTE3NywianRpIjoiNDM1YjRjMmMtZTIxYi00ZDQxLWIyNzQtZjI2ZjE4NTdjYjMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NzQ0MzExNzcsImNzcmYiOiI4YmJjNjVlNC1mNTg0LTRjY2YtODNkNC0wMTcxZTQxYTA5N2YiLCJleHAiOjE3NzQ0MzIwNzd9.zeVzf4xu4LxLRhbfTiupq8-8aAySeFna8nG2A5C439g",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/bookings/2",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "bookings",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get train stops",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "search",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "search stations",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
