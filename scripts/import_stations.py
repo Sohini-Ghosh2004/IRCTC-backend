@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
-from sqlalchemy.exc import IntegrityError
+
 
 import json
 from app import create_app
@@ -14,16 +14,14 @@ with app.app_context():
         data=json.load(file)
 
         for row in data["stations"]:
-            station=Station(
-                code=row.get("stnCode"),
-                name=row.get("stnName"),
-                city=row.get("stnCity",""),
-                
-            )
-            db.session.add(station)
-            try:
-                db.session.commit()
-            except IntegrityError:
-                db.session.rollback()
-                continue
+            code = row.get("stnCode")
+            # avoid duplicates
+            if not Station.query.filter_by(code=code).first():
+                station = Station(
+                    code=code,
+                    name=row.get("stnName"),
+                    city=row.get("stnCity", "")
+                )
+                db.session.add(station)
+        db.session.commit()
     print("Stations imported!")        
