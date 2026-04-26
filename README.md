@@ -13,12 +13,12 @@ A backend system that simulates railway ticket booking with real-world features 
   *  Confirmed Tickets
   *  RAC (Reservation Against Cancellation)
   *  Waitlist
-* Smart Cancellation Handling (automatically promotes passengers from Waitlist to RAC and RAC to Confirmed).
+* Cancellation Handling (automatically promotes passengers from Waitlist → RAC → Confirmed).
 * Concurrency-safe booking using database row locking
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 * **Framework:** Flask (Python)
 * **Database:** PostgreSQL
@@ -33,15 +33,59 @@ A backend system that simulates railway ticket booking with real-world features 
 ![ER Diagram](docs/er_diagram_irctc.png)
 
 ---
+## Booking Flow
 
+1. User searches trains (source → destination → date)
+2. System checks available seats in train schedule
+3. Booking allocation:
+   - If seats available → Confirmed
+   - If full → RAC
+   - If RAC full → Waitlist
+4. On cancellation:
+   - Waitlist → promoted to RAC
+   - RAC → promoted to Confirmed
+     
+ ---
+ ## API Endpoints
+
+### Auth APIs
+- POST /api/auth/register
+- POST /api/auth/login
+- GET /api/auth/me
+
+### Admin APIs
+- POST /api/stations
+- POST /api/trains
+- POST /api/train_schedules
+- POST /api/train_stops
+  
+**Note:**  These require an admin JWT token.
+
+### User APIs
+- GET /api/stations
+- GET /api/trains
+- GET /api/search
+- POST /api/bookings
+- GET /api/bookings
+- DELETE /api/bookings/<id>
+   
+**Note:** Some endpoints require JWT authentication.  
+Login first and include the token in headers:
+
+Authorization: Bearer <your_token>
+
+  ---
 ##  API Testing
 
 Postman collection available in `/postman` folder.
-### How to Import
+### Steps:
 1. Open Postman
 2. Click "Import"
 3. Upload the JSON file
-4. Start testing endpoints
+4. Run Login API
+5. Copy JWT token
+6. Add token in Authorization header
+7. Test endpoints
 
 ---
 
@@ -51,21 +95,6 @@ Postman collection available in `/postman` folder.
 - Ticket Booking (Confirmed / RAC / Waitlist)
 - Cancel Booking
 - Booking History
-
- **Note:** Some endpoints require JWT authentication.  
-Login first and include the token in headers:
-
-Authorization: Bearer <your_token>
-
-##  Admin APIs
-Certain endpoints are restricted to admin users:
-
-- Add stations
-- Add trains
-- Create train schedules
-- Add train stops
-
- These require an admin JWT token.
 
 ---
 
@@ -90,8 +119,17 @@ pip install -r requirements.txt
 DATABASE_URL=your_postgres_url
 JWT_SECRET_KEY=your_secret_key
 ```
+4. Database Seeding
 
-4. Run server:
+Run scripts in order to populate stations, trains, schedules, and stops:
+
+```bash
+python scripts/import_stations.py
+python scripts/generate_trains.py
+python scripts/generate_schedules.py
+python scripts/generate_train_stops.py
+```
+5. Run server:
 
 ```bash
 python run.py
