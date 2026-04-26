@@ -1,6 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
+from sqlalchemy.exc import IntegrityError
 
 import json
 from app import create_app
@@ -20,5 +21,9 @@ with app.app_context():
                 
             )
             db.session.add(station)
-        db.session.commit()
+            try:
+                db.session.commit()
+            except IntegrityError:
+                db.session.rollback()
+                continue
     print("Stations imported!")        
